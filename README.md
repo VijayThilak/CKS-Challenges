@@ -93,6 +93,12 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 
 ## TASK 5 - Create Network Policy
 
+external' pod should NOT be able to connect to 'alpha-svc' on port 80
+
+
+Inbound access only allowed from the pod called 'middleware' with label 'app=middleware'
+
+
 
 ## TASK 6 - Expose the Deployment
 
