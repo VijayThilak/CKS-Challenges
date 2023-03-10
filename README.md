@@ -14,7 +14,7 @@
  3. Image scanning by Trivy
  4. Modify the deployment 
  5. Create Network Policy
- 6. Expose Deployment
+ 6. Expose the Deployment
 
 
 ## TASK 1 - PVC binding to PV
@@ -94,7 +94,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 ## TASK 5 - Create Network Policy
 
 
-## TASK 6 - Expose Deployment
+## TASK 6 - Expose the Deployment
 
 # Result
 
