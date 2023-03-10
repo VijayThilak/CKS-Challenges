@@ -97,7 +97,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 ## TASK 6 - Expose the Deployment
 
 ```
-kubectl expose deploy alpha-xyz --name alpha-svc --port 80 --target-port 80 --type ClusterIP --namespace=alpha --dry-run=client -oyaml > alpha-svc.yaml
+kubectl expose deploy alpha-xyz -n alpha  --port 80 --target-port 80 --type ClusterIP  --name alpha-svc --dry-run=client -o yaml > alpha-svc.yaml
  
 k apply -f alpha-svc.yaml 
  
