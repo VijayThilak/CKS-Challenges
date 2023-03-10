@@ -10,10 +10,10 @@
 ## Tasks
 
 ### 1. PVC binding to PV
-### 2. Load Apparmor
-### 3. Image scan by Trivy
-### 4. Create Network policy
-
+### 2. Load Apparmor to secure deployment
+### 3. Image scanning by Trivy
+### 4. Create Network Policy
+### 5. Expose Deployment
 
 
 # Result
