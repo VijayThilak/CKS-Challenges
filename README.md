@@ -128,6 +128,12 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 3. Remove shell access by using  startupProbe
 4. Access Secret using environment variables within deployment
 5. Implent Network Policy
+
+
+# Result
+
+<img width="1337" alt="Screenshot 2023-03-09 at 7 15 28 PM" src="https://user-images.githubusercontent.com/8725714/224327287-e8624c4d-3f28-4da0-bd90-faf4c279add9.png">
+
 # CHALLENGE 3
 # Scenario
 # CHALLENGE 4
