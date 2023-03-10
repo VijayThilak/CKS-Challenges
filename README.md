@@ -101,9 +101,12 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 <img width="975" alt="Screenshot 2023-03-10 at 7 35 59 AM" src="https://user-images.githubusercontent.com/8725714/224209964-50024511-994a-4bff-b404-b1659fec967d.png">
 
 # Solution Video
-https://user-images.githubusercontent.com/8725714/224260473-8783277c-76e8-4a13-9b13-15d7ac3248ec.mp4
+https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-ac7f-50d9f967b6b0.mp4
 
 
 # CHALLENGE 2
+# Scenario
 # CHALLENGE 3
+# Scenario
 # CHALLENGE 4
+# Scenario
