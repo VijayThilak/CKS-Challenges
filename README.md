@@ -9,7 +9,7 @@
 ### 1. PVC binding to PV
 ### 2. Load Apparmor
 ### 3. Image scan by Trivy
-## 
+### 4. Create Network policy
 
 
 
