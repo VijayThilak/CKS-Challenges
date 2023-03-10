@@ -2,7 +2,14 @@
 
 # Challenge-1
 
+# Scenario
 
+## Tasks
+
+### 1. PVC binding to PV
+### 2. Load Apparmor
+### 3. Image scan by Trivy
+## 
 
 
 
