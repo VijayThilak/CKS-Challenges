@@ -18,8 +18,8 @@
 
 ## TASK 1 - PVC binding to PV
 
-Persistent Volume alpha-pv has been created already. Check the 'access modes' & 'capacity' status of both PV and PVC. 
-Here PV access mode - RWX (READWRITEMANY), PVC access mode - RWO (READWRITEINCE). Hence change the access mode of the pvc.
+Persistent Volume alpha-pv has been created already. Check the 'access modes' & 'capacity' parameters of both PV and PVC. 
+Here PV access mode - RWX (READWRITEMANY), PVC access mode - RWO (READWRITEINCE) are different. Hence change the access mode of the pvc.
    
 <img width="1145" alt="Screenshot 2023-03-10 at 8 43 37 AM" src="https://user-images.githubusercontent.com/8725714/224214466-a736a91e-4d4e-4045-b2b3-96cf501f979a.png">
 
