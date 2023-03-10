@@ -81,6 +81,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 ## TASK 4 - Modify the deployment 
 
 
+
 1. Create a deployment  with the least 'CRITICAL' vulnerabilities image - nginx:alpine 
 
 2. Deployment has exactly '1' ready replica
