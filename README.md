@@ -114,6 +114,12 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 # CHALLENGE 2
 # Scenario
+# Tasks
+1. Modify and Build Docker Image using Dockerfile
+2. Scan the config files to fix security issues using kubesec
+3. Remove shell access by using  startupProbe
+4. Access Secret using environment variables within deployment
+5. Implent Network Policy
 # CHALLENGE 3
 # Scenario
 # CHALLENGE 4
