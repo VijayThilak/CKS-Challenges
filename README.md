@@ -10,7 +10,7 @@
 # Tasks
 
  1. PVC binding to PV
- 2. Load Apparmor to secure deployment
+ 2. Load Apparmor profile to secure deployment
  3. Image scanning by Trivy
  4. Modify the deployment 
  5. Create Network Policy
@@ -19,8 +19,7 @@
 
 ## TASK 1 - PVC binding to PV
 
-Persistent Volume alpha-pv has been created already. Check the 'access modes' & 'capacity' parameters. Both PV and PVC access mode are different.
-PV access mode - RWX (READWRITEMANY), PVC access mode - RWO (READWRITEONCE). Hence change the access mode of the pvc.
+Persistent Volume `alpha-pv` has been created already. Check the `access modes & capacity` parameters. Access mode of  PV  `RWX (READWRITEMANY)` and PVC `RWO (READWRITEONCE)` are different. Hence change the access mode of the pvc.
 
 ```
 root@controlplane ~ ➜  k get pv,pvc -n alpha 
@@ -91,12 +90,16 @@ root@controlplane ~ ➜ for i in $(docker images | grep nginx | awk '{print $1 "
 
 
 
+## TASK 5 - Create Network Policy
 
+
+## TASK 6 - Expose Deployment
 
 # Result
 
 <img width="975" alt="Screenshot 2023-03-10 at 7 35 59 AM" src="https://user-images.githubusercontent.com/8725714/224209964-50024511-994a-4bff-b404-b1659fec967d.png">
 
 # Solution Video
+https://user-images.githubusercontent.com/8725714/224260473-8783277c-76e8-4a13-9b13-15d7ac3248ec.mp4
 
-https://user-images.githubusercontent.com/8725714/224211215-ab58dbe1-ceea-415f-9d2a-b8d636509a59.mp4
+
