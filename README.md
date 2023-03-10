@@ -96,6 +96,8 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 
 ## TASK 6 - Expose the Deployment
 
+Expose the deployment 'alpha-xyz' as a 'ClusterIP' type service called 'alpha-svc
+
 ```
 kubectl expose deploy -n alpha alpha-xyz   --port 80 --target-port 80 --type ClusterIP  --name alpha-svc --dry-run=client -o yaml > alpha-svc.yaml
  
