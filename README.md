@@ -1,6 +1,6 @@
 # CKS-Challenges
 
-# Challenge-1
+# Challenge 1
 
 # Scenario
 
@@ -19,7 +19,7 @@
 
 ## TASK 1 - PVC binding to PV
 
-Persistent Volume `alpha-pv` has been created already. Check the `access modes & capacity` parameters. Access mode of  PV  `RWX (READWRITEMANY)` and PVC `RWO (READWRITEONCE)` are different. Hence change the access mode of the pvc.
+Persistent Volume `alpha-pv` has been created already. Access mode of  PV  `RWX (READWRITEMANY)` and PVC `RWO (READWRITEONCE)` are different here. Hence change the access mode of the pvc.
 
 ```
 root@controlplane ~ ➜  k get pv,pvc -n alpha 
@@ -31,13 +31,14 @@ persistentvolumeclaim/alpha-pvc   Pending                                      l
 ```
    
 
-Modify the parameters of PVC and ensure it is bounded to PV
+Edit the parameters of PVC and ensure it is bounded to PV
 
 ```
-root@controlplane ~ ➜  k edit pvc -n alpha alpha-pvc 
+k edit pvc -n alpha alpha-pvc 
 
-root@controlplane ~ ➜  k replace --force -f /tmp/kubectl-edit-235559513.yaml
-
+k replace --force -f /tmp/kubectl-edit-235559513.yaml
+```
+```
 root@controlplane ~ ➜  k get pv,pvc -n alpha
 NAME                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS    REASON   AGE
 persistentvolume/alpha-pv   1Gi        RWX            Delete           Bound    alpha/alpha-pvc   local-storage            13m
@@ -67,13 +68,13 @@ root@controlplane ~ ➜  aa-status | grep custom
 
 Get all the nginx images 
 ```
-root@controlplane ~ ✖ docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr
+docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr
 ```
 
 Use 'trivy' to scan and find the nginx image with the least number of 'CRITICAL' vulnerabilities
 
 ```
-root@controlplane ~ ➜ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; echo ---- ; done
+for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; echo ---- ; done
 
 ```
 
@@ -103,3 +104,6 @@ root@controlplane ~ ➜ for i in $(docker images | grep nginx | awk '{print $1 "
 https://user-images.githubusercontent.com/8725714/224260473-8783277c-76e8-4a13-9b13-15d7ac3248ec.mp4
 
 
+# CHALLENGE 2
+# CHALLENGE 3
+# CHALLENGE 4
