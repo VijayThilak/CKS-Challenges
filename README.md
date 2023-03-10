@@ -4,6 +4,9 @@
 
 # Scenario
 
+<img width="979" alt="Screenshot 2023-03-10 at 8 28 45 AM" src="https://user-images.githubusercontent.com/8725714/224212235-86164a13-88f2-40fb-b83f-d52b1d849064.png">
+
+
 ## Tasks
 
 ### 1. PVC binding to PV
