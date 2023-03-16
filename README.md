@@ -143,6 +143,8 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 # Scenario
 <img width="1266" alt="Screenshot 2023-03-16 at 12 00 55 PM" src="https://user-images.githubusercontent.com/8725714/225533923-6c9f44b2-ca68-4b94-9036-d35babf52581.png">
 
+# Result
+<img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
 
 # CHALLENGE 4
 # Scenario
