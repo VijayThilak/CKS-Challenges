@@ -4,7 +4,8 @@
 
 # Scenario
 
-<img width="979" alt="Screenshot 2023-03-10 at 8 28 45 AM" src="https://user-images.githubusercontent.com/8725714/224212235-86164a13-88f2-40fb-b83f-d52b1d849064.png">
+<img width="964" alt="Screenshot 2023-03-16 at 1 12 57 PM" src="https://user-images.githubusercontent.com/8725714/225551840-4e1a80b0-ecf6-47ff-bb16-3a263efa5285.png">
+
 
 
 # Tasks
@@ -116,7 +117,8 @@ k get svc -n alpha
 
 # Result
 
-<img width="975" alt="Screenshot 2023-03-10 at 7 35 59 AM" src="https://user-images.githubusercontent.com/8725714/224209964-50024511-994a-4bff-b404-b1659fec967d.png">
+<img width="969" alt="Screenshot 2023-03-16 at 1 21 05 PM" src="https://user-images.githubusercontent.com/8725714/225551983-261caa3f-1e95-4826-b919-895edca910fe.png">
+
 
 # Solution Video
 https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-ac7f-50d9f967b6b0.mp4
