@@ -124,6 +124,9 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 # CHALLENGE 2
 # Scenario
+<img width="1342" alt="Screenshot 2023-03-16 at 11 56 57 AM" src="https://user-images.githubusercontent.com/8725714/225533132-ccf953fb-633a-4c25-a8ac-9f50c3e2da78.png">
+
+
 # Tasks
 1. Modify and Build Docker Image using Dockerfile
 2. Scan the config files to fix security issues using kubesec
