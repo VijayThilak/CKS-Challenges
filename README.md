@@ -84,11 +84,11 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 [config ] (https://github.com/VijayThilak/CKS-Challenges/blob/main/CKS-Challenge1/alpha-xyz.yaml)
 
 
-1. Create a deployment  with the least 'CRITICAL' vulnerabilities image - nginx:alpine 
+1. Create a deployment  with the least 'CRITICAL' vulnerabilities image - `nginx:alpine` 
 
 2. Deployment has exactly '1' ready replica
 
-3. 'data-volume' is mounted at '/usr/share/nginx/html' on the pod
+3. `data-volume` is mounted at `/usr/share/nginx/html` on the pod
 
 4. Add Apparmor profile
 
