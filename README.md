@@ -71,7 +71,7 @@ Get all the nginx images
 docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr
 ```
 
-Use 'trivy' to scan and find the nginx image with the least number of 'CRITICAL' vulnerabilities
+Use `trivy` to scan and find the nginx image with the least number of `CRITICAL` vulnerabilities
 
 ```
 for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; echo ---- ; done
