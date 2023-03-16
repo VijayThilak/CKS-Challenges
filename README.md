@@ -123,9 +123,9 @@ k get svc -n alpha
 # Solution Video
 https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-ac7f-50d9f967b6b0.mp4
 
-```
 
-```
+
+
 # CHALLENGE 2
 # Scenario
 
@@ -155,6 +155,6 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 # CHALLENGE 4
 # Scenario
+<img width="930" alt="Screenshot 2023-03-16 at 5 48 15 PM" src="https://user-images.githubusercontent.com/8725714/225626184-7686ee57-e2bb-4e43-9a16-4db2154023a3.png">
 # Result
-
-<img width="953" alt="Screenshot 2023-03-15 at 7 16 38 PM" src="https://user-images.githubusercontent.com/8725714/225525878-539343da-c4e4-4bdb-bb1b-f242473b6f89.png">
+<img width="929" alt="Screenshot 2023-03-16 at 6 36 36 PM" src="https://user-images.githubusercontent.com/8725714/225626201-79af5b52-955f-490e-a2a4-c12402afc613.png">
