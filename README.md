@@ -126,7 +126,9 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 # CHALLENGE 2
 # Scenario
-<img width="1342" alt="Screenshot 2023-03-16 at 11 56 57 AM" src="https://user-images.githubusercontent.com/8725714/225533132-ccf953fb-633a-4c25-a8ac-9f50c3e2da78.png">
+
+<img width="1331" alt="Screenshot 2023-03-16 at 3 37 37 PM" src="https://user-images.githubusercontent.com/8725714/225595963-106b53c5-6582-4b8f-b2ab-e3e927c7fd0e.png">
+
 
 
 # Tasks
@@ -139,7 +141,8 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 # Result
 
-<img width="1337" alt="Screenshot 2023-03-09 at 7 15 28 PM" src="https://user-images.githubusercontent.com/8725714/224327287-e8624c4d-3f28-4da0-bd90-faf4c279add9.png">
+<img width="1331" alt="Screenshot 2023-03-16 at 4 15 38 PM" src="https://user-images.githubusercontent.com/8725714/225595970-ce59bdc4-d8f8-4f5f-a2b4-e4f31dc27914.png">
+
 
 # CHALLENGE 3
 # Scenario
