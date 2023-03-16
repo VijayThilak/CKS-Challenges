@@ -4,7 +4,8 @@
 
 # Scenario
 
-<img width="979" alt="Screenshot 2023-03-10 at 8 28 45 AM" src="https://user-images.githubusercontent.com/8725714/224212235-86164a13-88f2-40fb-b83f-d52b1d849064.png">
+<img width="964" alt="Screenshot 2023-03-16 at 1 12 57 PM" src="https://user-images.githubusercontent.com/8725714/225551840-4e1a80b0-ecf6-47ff-bb16-3a263efa5285.png">
+
 
 
 # Tasks
@@ -71,7 +72,7 @@ Get all the nginx images
 docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr
 ```
 
-Use 'trivy' to scan and find the nginx image with the least number of 'CRITICAL' vulnerabilities
+Use `trivy` to scan and find the nginx image with the least number of `CRITICAL` vulnerabilities
 
 ```
 for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do echo $i ; trivy image --severity CRITICAL $i 2>&1 | grep Total ; echo ---- ; done
@@ -80,14 +81,14 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 
 ## TASK 4 - Modify the deployment 
 
-[config ] (https://github.com/VijayThilak/CKS-Challenges/blob/main/CKS-Challenge1/alpha-xyz.yaml)
+[Deployment config](https://github.com/VijayThilak/CKS-Challenges/blob/main/CKS-Challenge1/alpha-xyz.yaml)
 
 
-1. Create a deployment  with the least 'CRITICAL' vulnerabilities image - nginx:alpine 
+1. Create a deployment  with the least 'CRITICAL' vulnerabilities image - `nginx:alpine` 
 
 2. Deployment has exactly '1' ready replica
 
-3. 'data-volume' is mounted at '/usr/share/nginx/html' on the pod
+3. `data-volume` is mounted at `/usr/share/nginx/html` on the pod
 
 4. Add Apparmor profile
 
@@ -116,14 +117,22 @@ k get svc -n alpha
 
 # Result
 
-<img width="975" alt="Screenshot 2023-03-10 at 7 35 59 AM" src="https://user-images.githubusercontent.com/8725714/224209964-50024511-994a-4bff-b404-b1659fec967d.png">
+<img width="969" alt="Screenshot 2023-03-16 at 1 21 05 PM" src="https://user-images.githubusercontent.com/8725714/225551983-261caa3f-1e95-4826-b919-895edca910fe.png">
+
 
 # Solution Video
 https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-ac7f-50d9f967b6b0.mp4
 
 
+
+
 # CHALLENGE 2
 # Scenario
+
+<img width="1331" alt="Screenshot 2023-03-16 at 3 37 37 PM" src="https://user-images.githubusercontent.com/8725714/225595963-106b53c5-6582-4b8f-b2ab-e3e927c7fd0e.png">
+
+
+
 # Tasks
 1. Modify and Build Docker Image using Dockerfile
 2. Scan the config files to fix security issues using kubesec
@@ -134,11 +143,18 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 # Result
 
-<img width="1337" alt="Screenshot 2023-03-09 at 7 15 28 PM" src="https://user-images.githubusercontent.com/8725714/224327287-e8624c4d-3f28-4da0-bd90-faf4c279add9.png">
+<img width="1331" alt="Screenshot 2023-03-16 at 4 15 38 PM" src="https://user-images.githubusercontent.com/8725714/225595970-ce59bdc4-d8f8-4f5f-a2b4-e4f31dc27914.png">
+
 
 # CHALLENGE 3
 # Scenario
+<img width="1266" alt="Screenshot 2023-03-16 at 12 00 55 PM" src="https://user-images.githubusercontent.com/8725714/225533923-6c9f44b2-ca68-4b94-9036-d35babf52581.png">
+
+# Result
+<img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
+
 # CHALLENGE 4
 # Scenario
+<img width="930" alt="Screenshot 2023-03-16 at 5 48 15 PM" src="https://user-images.githubusercontent.com/8725714/225626184-7686ee57-e2bb-4e43-9a16-4db2154023a3.png">
 # Result
-<img width="953" alt="Screenshot 2023-03-15 at 7 16 38 PM" src="https://user-images.githubusercontent.com/8725714/225525878-539343da-c4e4-4bdb-bb1b-f242473b6f89.png">
+<img width="929" alt="Screenshot 2023-03-16 at 6 36 36 PM" src="https://user-images.githubusercontent.com/8725714/225626201-79af5b52-955f-490e-a2a4-c12402afc613.png">
