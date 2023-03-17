@@ -23,7 +23,8 @@
 Persistent Volume `alpha-pv` has been created already. Access mode of  PV  `RWX (READWRITEMANY)` and PVC `RWO (READWRITEONCE)` are different here. Hence change the access mode of the pvc.
 
 ```
-root@controlplane ~ ➜  k get pv,pvc -n alpha 
+k get pv,pvc -n alpha 
+
 NAME                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS    REASON   AGE
 persistentvolume/alpha-pv   1Gi        RWX            Delete           Available           local-storage            117s
 
@@ -40,7 +41,7 @@ k edit pvc -n alpha alpha-pvc
 k replace --force -f /tmp/kubectl-edit-235559513.yaml
 ```
 ```
-root@controlplane ~ ➜  k get pv,pvc -n alpha
+k get pv,pvc -n alpha
 NAME                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM             STORAGECLASS    REASON   AGE
 persistentvolume/alpha-pv   1Gi        RWX            Delete           Bound    alpha/alpha-pvc   local-storage            13m
 
@@ -53,16 +54,19 @@ persistentvolumeclaim/alpha-pvc   Bound    alpha-pv   1Gi        RWX            
 
 ## TASK 2 - Load Apparmor profile to secure deployment
 
+Move AppArmor profile to given location on controlplane node. 
 ```
-root@controlplane ~ ➜  aa-status | grep custom
+mv /root/usr.sbin.nginx /etc/apparmor.d/
+```
 
-root@controlplane ~ ➜  mv /root/usr.sbin.nginx /etc/apparmor.d/
+Load and Enforce AppArmor profile 'custom-nginx'
+```
+apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
+```
 
-root@controlplane ~ ➜  apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
-
-root@controlplane ~ ➜  aa-status | grep custom
-   custom-nginx
-  
+To Ensure the apparmor profile is Loaded
+```
+aa-status | grep custom
  ```
 
 ## TASK 3 - Image scanning by Trivy
@@ -126,7 +130,7 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 
 
-# CHALLENGE 2
+# Challenge 2
 # Scenario
 
 <img width="1331" alt="Screenshot 2023-03-16 at 3 37 37 PM" src="https://user-images.githubusercontent.com/8725714/225595963-106b53c5-6582-4b8f-b2ab-e3e927c7fd0e.png">
@@ -146,15 +150,16 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 <img width="1331" alt="Screenshot 2023-03-16 at 4 15 38 PM" src="https://user-images.githubusercontent.com/8725714/225595970-ce59bdc4-d8f8-4f5f-a2b4-e4f31dc27914.png">
 
 
-# CHALLENGE 3
+# Challenge 3
 # Scenario
 <img width="1266" alt="Screenshot 2023-03-16 at 12 00 55 PM" src="https://user-images.githubusercontent.com/8725714/225533923-6c9f44b2-ca68-4b94-9036-d35babf52581.png">
 
 # Result
 <img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
 
-# CHALLENGE 4
+# Challenge 4
 # Scenario
 <img width="930" alt="Screenshot 2023-03-16 at 5 48 15 PM" src="https://user-images.githubusercontent.com/8725714/225626184-7686ee57-e2bb-4e43-9a16-4db2154023a3.png">
+
 # Result
 <img width="929" alt="Screenshot 2023-03-16 at 6 36 36 PM" src="https://user-images.githubusercontent.com/8725714/225626201-79af5b52-955f-490e-a2a4-c12402afc613.png">
