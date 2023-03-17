@@ -56,7 +56,6 @@ persistentvolumeclaim/alpha-pvc   Bound    alpha-pv   1Gi        RWX            
 Move AppArmor profile to given location on controlplane node. 
 ```
 mv /root/usr.sbin.nginx /etc/apparmor.d/
-
 ```
 
 Load and Enforce AppArmor profile 'custom-nginx'
@@ -67,7 +66,6 @@ apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
 To Ensure the apparmor profile is Loaded
 ```
 aa-status | grep custom
-  
  ```
 
 ## TASK 3 - Image scanning by Trivy
