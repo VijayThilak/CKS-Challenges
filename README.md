@@ -53,18 +53,20 @@ persistentvolumeclaim/alpha-pvc   Bound    alpha-pv   1Gi        RWX            
 
 ## TASK 2 - Load Apparmor profile to secure deployment
 
-Move AppArmor profile to given location on controlplane node. Load and Enforce AppArmor profile 'custom-nginx'
-
+Move AppArmor profile to given location on controlplane node. 
+```
+mv /root/usr.sbin.nginx /etc/apparmor.d/
 
 ```
-root@controlplane ~ ➜  aa-status | grep custom
 
-root@controlplane ~ ➜  mv /root/usr.sbin.nginx /etc/apparmor.d/
+Load and Enforce AppArmor profile 'custom-nginx'
+```
+apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
+```
 
-root@controlplane ~ ➜  apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
-
-root@controlplane ~ ➜  aa-status | grep custom
-   custom-nginx
+To Ensure the apparmor profile is Loaded
+```
+aa-status | grep custom
   
  ```
 
