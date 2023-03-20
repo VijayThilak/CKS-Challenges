@@ -103,6 +103,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 [External network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/external-netpol.yaml)
 external' pod should NOT be able to connect to 'alpha-svc' on port 80
 
+[restrict network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/restrict-inbound.yaml)
 
 Inbound access only allowed from the pod called 'middleware' with label 'app=middleware'
 
