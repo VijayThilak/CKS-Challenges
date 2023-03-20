@@ -209,8 +209,18 @@ Create a network policy called `prod-netpol` that will only allow traffic only w
 
 
 # Challenge 3
+
 # Scenario
 <img width="1266" alt="Screenshot 2023-03-16 at 12 00 55 PM" src="https://user-images.githubusercontent.com/8725714/225533923-6c9f44b2-ca68-4b94-9036-d35babf52581.png">
+
+# Tasks
+
+1. Run `kube-bench` to identify and fix issues related to controlplane and work node components
+2. Fix kube-apiserver auditing issues
+3. Fix kubelet security issues
+4. Fix etcd, kube-controller-manager and kube-scheduler security issues
+
+
 
 # Result
 <img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
