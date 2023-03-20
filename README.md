@@ -151,13 +151,44 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 ## Task 1 - Modify and Build Docker Image using Dockerfile
 
+
+Move the required files and directories (app.py, requirements.txt and the templates directory) to a subdirectory called `app` under `webapp` and update the COPY instruction in the `Dockerfile` accordingly
+
+```
+docker build -t kodekloud/webapp-color:stable .
+```
 ## Task 2 - Scan the config files to fix security issues using kubesec
+
+```
+kubesec scan staging-webapp.yaml
+```
 
 ## Task 3 - Remove shell access by using  startupProbe
 
+Redeploy the 'staging-webapp' pod once issues are fixed 
+
 ## Task 4 - Access Secret using environment variables within deployment
 
+Create a secret called `prod-db` for all the hardcoded values and consume the secret values as environment variables within the deployment.
+
+```
+k get deployments.apps prod-web -n prod -oyaml > prod-web.yaml
+
+cat prod-web.yaml | grep -A 7 "env:"
+
+kubectl create secret generic prod-db --from-literal DB_Host=prod-db --from-literal DB_User=root --from-literal DB_Password=paswrd -n prod
+
+k describe secrets prod-db 
+
+k edit deployments.apps prod-web -n prod
+
+k get pod -n prod
+
+```
+
 ## Task 5 - Implement Network Policy
+
+Create a network policy called `prod-netpol` that will only allow traffic only within the `prod` namespace and deny all the traffic from other namespaces.
 
 # Result
 
