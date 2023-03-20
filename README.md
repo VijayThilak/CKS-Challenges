@@ -100,6 +100,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 
 ## TASK 5 - Create Network Policy
 
+[External network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/external-netpol.yaml)
 external' pod should NOT be able to connect to 'alpha-svc' on port 80
 
 
