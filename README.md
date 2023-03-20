@@ -161,6 +161,19 @@ docker build -t kodekloud/webapp-color:stable .
 
 ```
 kubesec scan staging-webapp.yaml
+
+image: kodekloud/webapp-color:stable
+    imagePullPolicy: Never
+    name: webapp-color
+    resources: {}
+    securityContext:
+      runAsUser: 0
+      allowPrivilegeEscalation: false
+      capabilities:
+        add:
+        - NET_ADMIN
+        
+        
 ```
 
 ## Task 3 - Remove shell access by using  startupProbe
