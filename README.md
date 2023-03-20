@@ -146,8 +146,18 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 2. Scan the config files to fix security issues using kubesec
 3. Remove shell access by using  startupProbe
 4. Access Secret using environment variables within deployment
-5. Implent Network Policy
+5. Implement Network Policy
 
+
+## Task 1 - Modify and Build Docker Image using Dockerfile
+
+## Task 2 - Scan the config files to fix security issues using kubesec
+
+## Task 3 - Remove shell access by using  startupProbe
+
+## Task 4 - Access Secret using environment variables within deployment
+
+## Task 5 - Implement Network Policy
 
 # Result
 
