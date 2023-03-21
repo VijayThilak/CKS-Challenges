@@ -110,9 +110,7 @@ Inbound access only allowed from the pod called 'middleware' with label 'app=mid
 
 ## TASK 6 - Expose the Deployment
 
-Expose the deployment `alpha-xyz` as a `ClusterIP` type service called `alpha-svc`
-
-[alpha-svc](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/alpha-svc.yaml)
+Expose the deployment `alpha-xyz` as a `ClusterIP` type service called [alpha-svc](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/alpha-svc.yaml)
 
 ```
 kubectl expose deploy -n alpha alpha-xyz   --port 80 --target-port 80 --type ClusterIP  --name alpha-svc --dry-run=client -o yaml > alpha-svc.yaml
