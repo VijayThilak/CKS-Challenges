@@ -59,7 +59,7 @@ Move AppArmor profile to given location on controlplane node.
 mv /root/usr.sbin.nginx /etc/apparmor.d/
 ```
 
-Load and Enforce AppArmor profile 'custom-nginx'
+Load and Enforce AppArmor profile `custom-nginx`
 ```
 apparmor_parser -q /etc/apparmor.d/usr.sbin.nginx
 ```
@@ -83,7 +83,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 
 ```
 
-## TASK 4 - Modify the deployment             ###[Deployment config](https://github.com/VijayThilak/CKS-Challenges/blob/main/CKS-Challenge1/alpha-xyz.yaml)
+## TASK 4 - Modify the deployment            
 
 [Deployment config](https://github.com/VijayThilak/CKS-Challenges/blob/main/CKS-Challenge1/alpha-xyz.yaml)
 
@@ -104,14 +104,13 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 external' pod should NOT be able to connect to 'alpha-svc' on port 80
 
 [restrict network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/restrict-inbound.yaml)
-
 Inbound access only allowed from the pod called 'middleware' with label 'app=middleware'
 
 
 
 ## TASK 6 - Expose the Deployment
 
-Expose the deployment 'alpha-xyz' as a 'ClusterIP' type service called 'alpha-svc
+Expose the deployment `alpha-xyz` as a `ClusterIP` type service called `alpha-svc`
 
 [alpha-svc](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/alpha-svc.yaml)
 
