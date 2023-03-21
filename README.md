@@ -218,6 +218,31 @@ Create a network policy called `prod-netpol` that will only allow traffic only w
 4. Fix etcd, kube-controller-manager and kube-scheduler security issues
 
 
+## Task 1 Run `kube-bench` to identify and fix issues related to controlplane and work node components
+
+Install 'kube-bench' tool
+```
+cd /opt
+curl -L https://github.com/aquasecurity/kube-bench/releases/download/v0.6.2/kube-bench_0.6.2_linux_amd64.tar.gz -o kube-bench_0.6.2_linux_amd64.tar.gz
+tar -xvf kube-bench_0.6.2_linux_amd64.tar.gz
+```
+Run 'kube-bench'
+
+```
+mkdir -p /var/www/html
+./kube-bench run --config-dir /opt/cfg --config /opt/cfg/config.yaml > /var/www/html/index.html
+```
+
+Identify 'failed' issues
+
+
+
+
+## Task 2 Fix kube-apiserver auditing issues
+
+## Task 3 Fix kubelet security issues
+
+## Fix etcd, kube-controller-manager and kube-scheduler security issues
 
 # Result
 <img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
