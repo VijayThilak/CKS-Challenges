@@ -218,7 +218,7 @@ Create a network policy called `prod-netpol` that will only allow traffic only w
 4. Fix etcd, kube-controller-manager and kube-scheduler security issues
 
 
-## Task 1 Run `kube-bench` to identify and fix issues related to controlplane and work node components
+## Task 1 - Run `kube-bench` to identify and fix issues related to controlplane and work node components
 
 Install 'kube-bench' tool
 ```
@@ -238,11 +238,99 @@ Identify 'failed' issues
 
 
 
-## Task 2 Fix kube-apiserver auditing issues
+## Task 2 - Fix kube-apiserver auditing issues
 
-## Task 3 Fix kubelet security issues
+```
+ps -ef |grep kubelet |grep config
 
-## Fix etcd, kube-controller-manager and kube-scheduler security issues
+/var/lib/kubelet/config.yaml
+
+cat /var/lib/kubelet/config.yaml
+
+$$$ staticPodPath: /etc/kubernetes/manifests
+
+````
+
+```
+vim /etc/kubernetes/manifests/kube-apiserver.yaml
+parameters:
+
+- --profiling=false
+- --enable-admission-plugins=NodeRestriction,PodSecurityPolicy
+- --insecure-port=0
+
+  - mountPath: /var/log/apiserver/
+    name: audit-log
+    readOnly: false
+
+  - name: audit-log
+    hostPath:
+      path: /var/log/apiserver/
+      type: DirectoryOrCreate
+
+
+    - --audit-log-path=/var/log/apiserver/audit.log
+    - --audit-log-maxage=30
+    - --audit-log-maxbackup=10
+    - --audit-log-maxsize=100
+    
+```
+Ensure the apiserver is up and running.
+```
+crictl ps -a
+```
+
+## Task 3 - Fix kubelet security issues
+
+Apply fixes on both controlplane and workernode
+
+```
+vim /var/lib/kubelet/config.yaml 
+
+protectKernelDefaults: true
+```
+
+```
+systemctl restart kubelet
+```
+
+```
+k get nodes
+ssh node01
+
+ps -ef |grep kubelet
+vim /var/lib/kubelet/config.yaml 
+```
+
+## Task 4 - Fix etcd, kube-controller-manager and kube-scheduler security issues
+
+Fix ETCD issues
+```
+kubectl config set-context --current --namespace kube-system
+ls -l /var/lib/ | grep etcd
+
+chown etcd:etcd /var/lib/etcd
+
+````
+Fix Kube Controller Manager issues
+
+```
+vim kube-controller-manager.yaml 
+- --profiling=false
+```
+
+Fix Kube Scheduler issues
+```
+vi kube-scheduler.yaml 
+- --profiling=false
+```
+
+Restart kubelet and ensure all services are up and running after fixing security issues
+```
+crictl ps -a
+
+systemctl restart kubelet
+```
 
 # Result
 <img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
