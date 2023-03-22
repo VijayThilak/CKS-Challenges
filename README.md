@@ -359,9 +359,54 @@ Then Create a single rule in the audit policy at `/etc/kubernetes/audit-policy.y
 
 
 
-
 ## Tasks 2 - Enable auditing in kube-apiserver
+
+Modify the kube-apiserver file `/etc/kubernetes/manifests/kube-apiserver.yaml` and add the following config
+
+```
+- --audit-policy-file=/etc/kubernetes/audit-policy.yaml
+- --audit-log-path=/var/log/kubernetes/audit/audit.log
+
+    - mountPath: /etc/kubernetes/audit-policy.yaml
+      name: audit
+      readOnly: true
+    - mountPath: /var/log/kubernetes/audit/
+      name: audit-log
+      readOnly: false
+
+  - name: audit
+    hostPath:
+      path: /etc/kubernetes/audit-policy.yaml
+      type: File
+  - name: audit-log
+    hostPath:
+      path: /var/log/kubernetes/audit/
+      type: DirectoryOrCreate
+```
+Ensure the kube-apiserver is  running
+
+```
+crictl ps -a
+journalctl | grep apiserver
+```
+
 ## Tasks 3 - Install and Configure Falco
+
+Install [Falco](https://falco.org/docs/getting-started/installation/) and start it's service
+
+```
+cat /etc/*release*
+
+FALCO_FRONTEND=noninteractive apt-get install -y falco
+
+systemctl status kubelet 
+
+systemctl start falco
+systemctl status falco
+```
+
+
+
 ## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods in this namespace
 
 
