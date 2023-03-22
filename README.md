@@ -339,5 +339,15 @@ systemctl restart kubelet
 # Scenario
 <img width="930" alt="Screenshot 2023-03-16 at 5 48 15 PM" src="https://user-images.githubusercontent.com/8725714/225626184-7686ee57-e2bb-4e43-9a16-4db2154023a3.png">
 
+# Tasks
+
+## Tasks 1 - Create an audit policy
+Create a single rule in the audit policy
+
+## Tasks 2 - Enable auditing in kube-apiserver
+## Tasks 3 - Install and Configure Falco
+## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods in this namespace
+
+
 # Result
 <img width="929" alt="Screenshot 2023-03-16 at 6 36 36 PM" src="https://user-images.githubusercontent.com/8725714/225626201-79af5b52-955f-490e-a2a4-c12402afc613.png">
