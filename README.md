@@ -341,8 +341,24 @@ systemctl restart kubelet
 
 # Tasks
 
-## Tasks 1 - Create an audit policy
-Create a single rule in the audit policy
+## Tasks 1 - Create an audit policy 
+
+Check the roles,rolebinding and configmaps in citadel namespace.
+
+```
+k get all -n citadel
+k get role -n citadel
+k get cm -n citadel
+k get rolebinding -n citadel
+```
+
+Then Create a single rule in the audit policy at `/etc/kubernetes/audit-policy.yaml` as per requirements
+
+[Audit Policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge4/audit-policy.yaml)
+
+
+
+
 
 ## Tasks 2 - Enable auditing in kube-apiserver
 ## Tasks 3 - Install and Configure Falco
