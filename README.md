@@ -258,6 +258,10 @@ parameters:
 - --profiling=false
 - --enable-admission-plugins=NodeRestriction,PodSecurityPolicy
 - --insecure-port=0
+- --audit-log-path=/var/log/apiserver/audit.log
+- --audit-log-maxage=30
+- --audit-log-maxbackup=10
+- --audit-log-maxsize=100
 
   - mountPath: /var/log/apiserver/
     name: audit-log
@@ -267,12 +271,6 @@ parameters:
     hostPath:
       path: /var/log/apiserver/
       type: DirectoryOrCreate
-
-
-    - --audit-log-path=/var/log/apiserver/audit.log
-    - --audit-log-maxage=30
-    - --audit-log-maxbackup=10
-    - --audit-log-maxsize=100
     
 ```
 Ensure the apiserver is up and running.
