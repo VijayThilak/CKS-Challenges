@@ -418,13 +418,13 @@ systemctl restart falco
 systemctl status falco
 ```
 
-Inspect the API server audit logs and identify the user responsible for the abnormal behaviour seen in the 'citadel' namespace
+Check the API server audit logs and find  the user responsible for the abnormal behaviour in the 'citadel' namespace
 ```
-cat /var/log/kubernetes/audit/audit.log |grep citadel |egrep -v "\"get|\"watch|\"list" |jq
+cat /var/log/kubernetes/audit/audit.log |grep citadel |grep -v "get\|watch\|list" |jq
 ```
 ## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods in this namespace
 
-Find the name of the 'user', 'role' and 'rolebinding' responsible for the event
+Find the name of the 'user', 'role' and 'rolebinding' responsible for the issue
 ```
 k get sa -n citadel
 k get role -n citadel
@@ -442,24 +442,24 @@ Save the name of the 'user', 'role' and 'rolebinding' responsible for the event 
 ```
 echo "agent-smith,important_role_do_not_delete,important_binding_do_not_delete" > /opt/blacklist_users
 ```
-Inspect the 'falco' logs and identify the pod that has events generated because of packages being updated on it
+
+Check the 'falco' logs and find the pod that has events generated because of packages being updated on it
 ```
 cat falco.log 
 
-05:32:46.651495067: Error Package management process launched in container (user=root user_loginuid=-1 command=apt install nginx container_id=e23544847bbf container_name=k8s_eden-software2_eden-software2_eden-prime_07eb74da-63d8-4ac5-8310-ab49fa93cbc6_0 image=ubuntu:latest)
+Mar 15 13:40:26 controlplane falco[23510]: 13:40:26.974065686 Error Package management process launched in container (user=root user_loginuid=-1 command=apt install nginx container_id=c3c7bfd6dd6e  container_name=k8s_eden-software2_eden-software2_eden-prime_ 94744b4a-a073-490b-8bef-f54c0313e873_0  image=ubuntu:latest)
 ```
 Identify the container ID
 ```
-//container_id=e23544847bbf
 
-crictl ps |grep "e23544847bbf"
+crictl ps |grep "c3c7bfd6dd6e"
 ```
 
 Identify the namespace and pod name
 ```
-crictl pods| grep "91efe3fe8bed6"
-root@controlplane /opt ➜  crictl pods| grep "91efe3fe8bed6"
-91efe3fe8bed6       54 minutes ago       Ready               eden-software2                         eden-prime          0                   (default)
+crictl pods| grep "c3c7bfd6dd6e"
+root@controlplane /opt ➜  crictl pods| grep "eden-software2 "
+c3c7bfd6dd6e       12 minutes ago       Ready               eden-software2                         eden-prime          0                   (default)
 ```  
 
 Save the namespace and pod name to file '/opt/compromised_pods'
