@@ -218,7 +218,7 @@ Create a network policy called `prod-netpol` that will only allow traffic only w
 
 ## Task 1 - Run `kube-bench` to identify and fix issues related to controlplane and work node components
 
-Install 'kube-bench' tool
+Install [kube-bench](https://github.com/aquasecurity/kube-bench/blob/main/docs/installation.md) on `controlplane`
 ```
 cd /opt
 curl -L https://github.com/aquasecurity/kube-bench/releases/download/v0.6.2/kube-bench_0.6.2_linux_amd64.tar.gz -o kube-bench_0.6.2_linux_amd64.tar.gz
