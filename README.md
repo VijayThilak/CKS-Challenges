@@ -168,9 +168,7 @@ image: kodekloud/webapp-color:stable
       allowPrivilegeEscalation: false
       capabilities:
         add:
-        - NET_ADMIN
-        
-        
+        - NET_ADMIN       
 ```
 
 ## Task 3 - Remove shell access by using  startupProbe
