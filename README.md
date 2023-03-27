@@ -175,7 +175,7 @@ image: kodekloud/webapp-color:stable
 
 Redeploy the 'staging-webapp' pod once issues are fixed 
 
-## Task 4 - Access Secret using environment variables within deployment
+## Task 4 - Create and access the Secret using environment variables within deployment
 
 Create a secret called `prod-db` for all the hardcoded values and consume the secret values as environment variables within the deployment.
 
