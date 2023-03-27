@@ -202,6 +202,10 @@ Create a network policy called `prod-netpol` that will only allow traffic only w
 
 <img width="1331" alt="Screenshot 2023-03-16 at 4 15 38 PM" src="https://user-images.githubusercontent.com/8725714/225595970-ce59bdc4-d8f8-4f5f-a2b4-e4f31dc27914.png">
 
+# Solution Video
+
+https://user-images.githubusercontent.com/8725714/227878140-89c56152-4c7b-4fa1-866e-ef3d40877216.mp4
+
 
 # Challenge 3
 
