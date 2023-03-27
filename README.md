@@ -216,7 +216,7 @@ Create a network policy called `prod-netpol` that will only allow traffic only w
 4. Fix etcd, kube-controller-manager and kube-scheduler security issues
 
 
-## Task 1 - Run `kube-bench` to identify and fix issues related to controlplane and work node components
+## Task 1 - Install and run `kube-bench` to find and fix issues on Controlplane & Worker node
 
 Install [kube-bench](https://github.com/aquasecurity/kube-bench/blob/main/docs/installation.md) on `controlplane`
 ```
@@ -230,7 +230,6 @@ Run `kube-bench` to find the issues
 mkdir -p /var/www/html
 ./kube-bench run --config-dir /opt/cfg --config /opt/cfg/config.yaml > /var/www/html/index.html
 ```
-
 
 
 ## Task 2 - Fix kube-apiserver auditing issues
@@ -273,7 +272,7 @@ Ensure the apiserver is up and running.
 crictl ps -a
 ```
 
-## Task 3 - Fix kubelet security issues
+## Task 3 - Fix the kubelet issue
 
 Apply fixes on both controlplane and workernode
 
@@ -295,7 +294,7 @@ ps -ef |grep kubelet
 vim /var/lib/kubelet/config.yaml 
 ```
 
-## Task 4 - Fix etcd, kube-controller-manager and kube-scheduler security issues
+## Task 4 - Fix etcd, kube-controller-manager and kube-scheduler issues
 
 Fix ETCD issues
 ```
