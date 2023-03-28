@@ -426,7 +426,8 @@ Check the API server audit logs and find  the user responsible for the abnormal 
 ```
 cat /var/log/kubernetes/audit/audit.log |grep citadel |grep -v "get\|watch\|list" |jq
 ```
-## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods in this namespace
+
+## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods 
 
 Find the name of the 'user', 'role' and 'rolebinding' responsible for the issue
 ```
