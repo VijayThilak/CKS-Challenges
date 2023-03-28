@@ -236,7 +236,7 @@ mkdir -p /var/www/html
 ```
 
 
-## Task 2 - Fix kube-apiserver auditing issues
+## Task 2 - Fix  the kube-apiserver  issues
 
 ```
 ps -ef |grep kubelet |grep config
