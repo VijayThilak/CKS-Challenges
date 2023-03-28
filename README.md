@@ -473,7 +473,7 @@ echo "eden-prime,eden-software2" > /opt/compromised_pods
 ```
 
 
-Delete the POD belonging to the 'omega' namespace that were flagged in the 'Security Report' file '/opt/compromised_pods'
+Delete the POD belonging to the 'eden-prime' namespace that were flagged in the 'Security Report' file '/opt/compromised_pods'
 ```
 k delete pod eden-software2 -n eden-prime
 ```
