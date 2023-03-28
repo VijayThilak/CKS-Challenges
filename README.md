@@ -492,3 +492,9 @@ k delete rolebinding important_binding_do_not_delete -n citadel
 
 # Result
 <img width="929" alt="Screenshot 2023-03-16 at 6 36 36 PM" src="https://user-images.githubusercontent.com/8725714/225626201-79af5b52-955f-490e-a2a4-c12402afc613.png">
+
+# Solution Video
+https://user-images.githubusercontent.com/8725714/228230587-f7ed415d-ac7b-4965-a2b6-b62f73451efb.mp4
+
+
+                                                                # THANK YOU
