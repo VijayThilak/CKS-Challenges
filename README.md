@@ -331,6 +331,12 @@ systemctl restart kubelet
 # Result
 <img width="1274" alt="Screenshot 2023-03-16 at 12 21 21 PM" src="https://user-images.githubusercontent.com/8725714/225538916-7316f363-76ec-4fee-a385-2f73bfacd36a.png">
 
+
+# Solution Video
+
+https://user-images.githubusercontent.com/8725714/228216702-97c98fef-2bd9-4148-93d8-8fb92ef4c4ec.mp4
+
+
 # Challenge 4
 # Scenario
 <img width="930" alt="Screenshot 2023-03-16 at 5 48 15 PM" src="https://user-images.githubusercontent.com/8725714/225626184-7686ee57-e2bb-4e43-9a16-4db2154023a3.png">
