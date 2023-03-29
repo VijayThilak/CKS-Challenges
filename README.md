@@ -483,7 +483,7 @@ echo "eden-prime,eden-software2" > /opt/compromised_pods
 
 Delete the Compromised pods in the `eden-prime` namespace 
 ```
-k delete pod eden-software2 -n eden-prime
+k delete pod eden-software2 -n eden-prime --force
 ```
 Find the role and rolebinding causing the constant deletion and creation of the configmaps and pods in `citadel` namespace
 ```
