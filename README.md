@@ -408,8 +408,7 @@ cat /etc/*release*
 
 FALCO_FRONTEND=noninteractive apt-get install -y falco
 
-systemctl status kubelet 
-
+systemctl status falco
 systemctl start falco
 systemctl status falco
 ```
