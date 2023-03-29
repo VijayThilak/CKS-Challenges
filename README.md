@@ -371,7 +371,7 @@ Then Create a single rule in the [audit Policy](https://github.com/VijayThilak/C
 
 ## Tasks 2 - Enable auditing in kube-apiserver
 
-Modify the kube-apiserver file `/etc/kubernetes/manifests/kube-apiserver.yaml` and add the following config
+Modify the [kube-apiserver](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge4/kube-apiserver.yaml) file `/etc/kubernetes/manifests/kube-apiserver.yaml` as below config
 
 ```
 - --audit-policy-file=/etc/kubernetes/audit-policy.yaml
