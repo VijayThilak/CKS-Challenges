@@ -149,7 +149,7 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 ## Task 1 - Modify and Build Docker Image using Dockerfile
 
 
-Move the required files and directories (app.py, requirements.txt and the templates directory) to a subdirectory called `app` under `webapp` and update the COPY instruction in the `Dockerfile` accordingly
+Move the required files and directories (app.py, requirements.txt and the templates directory) to a subdirectory called `app` under `webapp` and update the COPY instruction in the [Dockerfile](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge2/Dockerfile) accordingly
 
 ```
 docker build -t kodekloud/webapp-color:stable .
