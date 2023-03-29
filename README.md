@@ -436,7 +436,7 @@ Check the API server audit logs and find  the user responsible for the abnormal 
 cat /var/log/kubernetes/audit/audit.log |grep citadel |grep -v "get\|watch\|list" |jq
 ```
 
-Find the name of the 'user', 'role' and 'rolebinding' responsible for the issue
+Find the name of the `'user', 'role' and 'rolebinding'` responsible for the issue
 ```
 k get sa -n citadel
 k get role -n citadel
@@ -449,13 +449,13 @@ k get rolebindings.rbac.authorization.k8s.io important_binding_do_not_delete -n 
 ```
 k get rolebindings.rbac.authorization.k8s.io important_binding_do_not_delete -n citadel -oyaml
 ``` 
-Save the name of the 'user', 'role' and 'rolebinding' responsible for the event to the file '/opt/blacklist_users' file
+Save the name of the `'user, 'role' and 'rolebinding'` responsible for the event to the file `'/opt/blacklist_users'` file
 
 ```
 echo "agent-smith,important_role_do_not_delete,important_binding_do_not_delete" > /opt/blacklist_users
 ```
 
-Check the 'falco' logs to find the pod that has events generated because of packages being updated on it
+Inspect the `falco` logs to find the pod that has events generated because of packages being updated on it
 ```
 Journalctl -f falco.log 
 
@@ -474,7 +474,7 @@ crictl pods| grep "eden-software2"
 c3c7bfd6dd6e       12 minutes ago       Ready               eden-software2                         eden-prime          0                   (default)
 ```  
 
-Save the namespace and pod name to file '/opt/compromised_pods'
+Save the namespace and pod name to file `/opt/compromised_pods`
 ```
 echo "eden-prime,eden-software2" > /opt/compromised_pods
 ```
