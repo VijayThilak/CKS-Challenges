@@ -308,31 +308,30 @@ systemctl restart kubelet
 
 ## Task 4 - Fix etcd, kube-controller-manager and kube-scheduler issues
 
-Fix ETCD issues
+Fix ETCD issue - Ensure that the ownership of etcd data directory is set to etcd:etcd
 ```
 ls -ltr /var/lib/ | grep etcd
 
 chown etcd:etcd /var/lib/etcd
 
 ````
-Fix Kube Controller Manager issues
+Fix Kube Controller Manager issue 
 
 ```
-vim kube-controller-manager.yaml 
+vim /etc/kubernetes/manifests/kube-controller-manager.yaml 
 - --profiling=false
 ```
 
 Fix Kube Scheduler issues
 ```
-vi kube-scheduler.yaml 
+vim /etc/kubernetes/manifests/kube-scheduler.yaml 
 - --profiling=false
 ```
 
-Restart kubelet and ensure all services are up and running after fixing security issues
+Ensure all pod are up and running after fixing security issues
 ```
 crictl ps -a
 
-systemctl restart kubelet
 ```
 
 # Result
