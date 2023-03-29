@@ -173,7 +173,7 @@ image: kodekloud/webapp-color:stable
 
 ## Task 3 - Remove shell access by using  startupProbe
 
-Redeploy the 'staging-webapp' pod once issues are fixed 
+Ensure the pod `dev-webapp` and `staging-webapp` is immutable. Redeploy the pod as per the given recommendations and make sure that the application is up
 
 ## Task 4 - Create and access the Secret using environment variables within deployment
 
