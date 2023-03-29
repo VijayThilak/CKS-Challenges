@@ -49,7 +49,7 @@ NAME                              STATUS   VOLUME     CAPACITY   ACCESS MODES   
 persistentvolumeclaim/alpha-pvc   Bound    alpha-pv   1Gi        RWX            local-storage   55s
 
 ```
-<img width="1211" alt="Screenshot 2023-03-10 at 8 45 13 AM" src="https://user-images.githubusercontent.com/8725714/224214470-27af6028-832a-4d74-bdd0-e2d85e7c2705.png">
+
 
 
 ## TASK 2 - Load Apparmor profile to secure deployment
