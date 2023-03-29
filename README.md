@@ -315,23 +315,22 @@ ls -ltr /var/lib/ | grep etcd
 chown etcd:etcd /var/lib/etcd
 
 ````
-Fix Kube Controller Manager issue 
 
+Fix Kube Controller Manager issue - Set the `profiling` parameter on kube-controller file
 ```
 vim /etc/kubernetes/manifests/kube-controller-manager.yaml 
 - --profiling=false
 ```
 
-Fix Kube Scheduler issues
+Fix Kube Scheduler issue - Set the `profiling` parameter on kube-scheduler file
 ```
 vim /etc/kubernetes/manifests/kube-scheduler.yaml 
 - --profiling=false
 ```
 
-Ensure all pod are up and running after fixing security issues
+Once the changes done, pods will recreate. Ensure all pod are up and running.
 ```
 crictl ps -a
-
 ```
 
 # Result
