@@ -101,10 +101,10 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 ## TASK 5 - Create Network Policy
 
 
-External pod should NOT be able to connect to 'alpha-svc' on port 80 [External network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/external-netpol.yaml)
+External pod should NOT be able to connect to `alpha-svc` on port 80 [External network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/external-netpol.yaml)
 
 
-Inbound access only allowed from the pod called 'middleware' with label 'app=middleware' [Restrict network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/restrict-inbound.yaml)
+Inbound access only allowed from the pod called `middleware` with label `app=middleware` [Restrict network policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/restrict-inbound.yaml)
 
 
 
