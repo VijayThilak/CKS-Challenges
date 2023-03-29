@@ -468,8 +468,7 @@ crictl ps |grep "c3c7bfd6dd6e"
 
 Find the pod namespace and name
 ```
-crictl pods| grep "c3c7bfd6dd6e"
-root@controlplane /opt ➜  crictl pods| grep "eden-software2 "
+crictl pods| grep "eden-software2"
 c3c7bfd6dd6e       12 minutes ago       Ready               eden-software2                         eden-prime          0                   (default)
 ```  
 
