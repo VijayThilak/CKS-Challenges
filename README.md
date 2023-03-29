@@ -453,19 +453,20 @@ Save the name of the 'user', 'role' and 'rolebinding' responsible for the event 
 echo "agent-smith,important_role_do_not_delete,important_binding_do_not_delete" > /opt/blacklist_users
 ```
 
-Check the 'falco' logs and find the pod that has events generated because of packages being updated on it
+Check the 'falco' logs to find the pod that has events generated because of packages being updated on it
 ```
 cat falco.log 
 
 Mar 15 13:40:26 controlplane falco[23510]: 13:40:26.974065686 Error Package management process launched in container (user=root user_loginuid=-1 command=apt install nginx container_id=c3c7bfd6dd6e  container_name=k8s_eden-software2_eden-software2_eden-prime_ 94744b4a-a073-490b-8bef-f54c0313e873_0  image=ubuntu:latest)
 ```
-Identify the container ID
+
+Find the container ID
 ```
 
 crictl ps |grep "c3c7bfd6dd6e"
 ```
 
-Identify the namespace and pod name
+Find the pod namespace and name
 ```
 crictl pods| grep "c3c7bfd6dd6e"
 root@controlplane /opt ➜  crictl pods| grep "eden-software2 "
@@ -478,17 +479,17 @@ echo "eden-prime,eden-software2" > /opt/compromised_pods
 ```
 
 
-Delete the POD belonging to the 'eden-prime' namespace that were flagged in the 'Security Report' file '/opt/compromised_pods'
+Delete the Compromised pods in the `eden-prime` namespace 
 ```
 k delete pod eden-software2 -n eden-prime
 ```
-Identify and delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods in this namespace
+Find the role and rolebinding causing the constant deletion and creation of the configmaps and pods in `citadel` namespace
 ```
 k get role -n citadel
 k get rolebinding -n citadel
 ``` 
 
-Take Action
+Delete the role and rolebindings 
 ```
 k delete role important_role_do_not_delete -n citadel
 k delete rolebinding important_binding_do_not_delete -n citadel 
