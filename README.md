@@ -196,7 +196,7 @@ k get pod -n prod
 
 ## Task 5 - Implement Network Policy
 
-Create a network policy called (prod-netpol)(https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge2/netpo.yaml) that will only allow traffic only within the `prod` namespace and deny all the traffic from other namespaces.
+Create a network policy called [prod-netpol](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge2/netpo.yaml) that will only allow traffic only within the `prod` namespace and deny all the traffic from other namespaces.
 
 # Result
 
