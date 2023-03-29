@@ -328,7 +328,7 @@ vim /etc/kubernetes/manifests/kube-scheduler.yaml
 - --profiling=false
 ```
 
-Once the changes done, pods will recreate. Ensure all pod are up and running.
+Once the changes done, kube-controller-manager and kube-scheduler pods will recreate. Ensure both pod are up and running
 ```
 crictl ps -a
 ```
