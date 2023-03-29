@@ -88,7 +88,7 @@ for i in $(docker images | grep nginx | awk '{print $1 ":" $2}' | sort -hr) ; do
 
 
 
-1. Create a [Deployment](https://github.com/VijayThilak/CKS-Challenges/blob/main/CKS-Challenge1/alpha-xyz.yaml)  with the least 'CRITICAL' vulnerabilities image - `nginx:alpine` 
+1. Create a [Deployment](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge1/alpha-xyz.yaml)  with the least 'CRITICAL' vulnerabilities image - `nginx:alpine` 
 
 2. Deployment has exactly '1' ready replica
 
