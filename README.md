@@ -308,6 +308,13 @@ systemctl restart kubelet
 
 ## Task 4 - Fix etcd, kube-controller-manager and kube-scheduler issues
 
+
+Fix Kube Controller Manager issue - Set the `profiling` parameter on kube-controller file
+```
+vim /etc/kubernetes/manifests/kube-controller-manager.yaml 
+- --profiling=false
+```
+
 Fix ETCD issue - Ensure that the ownership of etcd data directory is set to etcd:etcd
 ```
 ls -ltr /var/lib/ | grep etcd
@@ -316,11 +323,7 @@ chown etcd:etcd /var/lib/etcd
 
 ````
 
-Fix Kube Controller Manager issue - Set the `profiling` parameter on kube-controller file
-```
-vim /etc/kubernetes/manifests/kube-controller-manager.yaml 
-- --profiling=false
-```
+
 
 Fix Kube Scheduler issue - Set the `profiling` parameter on kube-scheduler file
 ```
