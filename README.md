@@ -387,6 +387,7 @@ Modify the [kube-apiserver](https://github.com/VijayThilak/CKS-Challenges/blob/m
     hostPath:
       path: /etc/kubernetes/audit-policy.yaml
       type: File
+      
   - name: audit-log
     hostPath:
       path: /var/log/kubernetes/audit/
