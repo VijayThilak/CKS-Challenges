@@ -415,7 +415,7 @@ systemctl status falco
 Edit the Falco config file to save event logs at `/opt/falco.log`
 
 ```
-vim /etc/falcofalco.yaml 
+vim /etc/falco/falco.yaml 
 file_output:
   enabled:  true
   keep_alive: false
