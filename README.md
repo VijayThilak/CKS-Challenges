@@ -182,7 +182,7 @@ Create a secret called `prod-db` for all the hardcoded values and consume the se
 ```
 k get deployments.apps prod-web -n prod -oyaml > prod-web.yaml
 
-cat prod-web.yaml | grep -A 7 "env:"
+cat prod-web.yaml | grep -A6 "env:"
 
 kubectl create secret generic prod-db --from-literal DB_Host=prod-db --from-literal DB_User=root --from-literal DB_Password=paswrd -n prod
 
@@ -196,7 +196,7 @@ k get pod -n prod
 
 ## Task 5 - Implement Network Policy
 
-Create a network policy called `prod-netpol` that will only allow traffic only within the `prod` namespace and deny all the traffic from other namespaces.
+Create a network policy called `net-po` that will only allow traffic only within the `prod` namespace and deny all the traffic from other namespaces.
 
 # Result
 
@@ -238,6 +238,8 @@ mkdir -p /var/www/html
 
 ## Task 2 - Fix  the kube-apiserver  issues
 
+Check the kubelet config file to find the manifests path
+
 ```
 ps -ef |grep kubelet |grep config
 
@@ -248,6 +250,8 @@ cat /var/lib/kubelet/config.yaml
 $$$ staticPodPath: /etc/kubernetes/manifests
 
 ````
+
+Edit the kube-apiserver manifests as per kube-bench results
 
 ```
 vim /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -278,32 +282,35 @@ crictl ps -a
 
 ## Task 3 - Fix the kubelet issue
 
-Apply fixes on both controlplane and workernode
-
+Modify the kubelet file on controlplane 
 ```
+ps -ef |grep kubelet
 vim /var/lib/kubelet/config.yaml 
 
 protectKernelDefaults: true
 ```
 
-```
-systemctl restart kubelet
-```
-
+Login to Workernode and modify the kubelet file
 ```
 k get nodes
 ssh node01
 
-ps -ef |grep kubelet
 vim /var/lib/kubelet/config.yaml 
+
+protectKernelDefaults: true
+```
+
+Run the kubelet restart on Controlplane and Workernode
+```
+systemctl daemon-reload
+systemctl restart kubelet
 ```
 
 ## Task 4 - Fix etcd, kube-controller-manager and kube-scheduler issues
 
 Fix ETCD issues
 ```
-kubectl config set-context --current --namespace kube-system
-ls -l /var/lib/ | grep etcd
+ls -ltr /var/lib/ | grep etcd
 
 chown etcd:etcd /var/lib/etcd
 
