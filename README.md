@@ -180,16 +180,18 @@ Ensure the pod [dev-webapp](https://github.com/VijayThilak/CKS-Challenges/blob/m
 Create a secret called `prod-db` for all the hardcoded values and consume the secret values as environment variables within the deployment.
 
 ```
-k get deployments.apps prod-web -n prod -oyaml > prod-web.yaml
+k get deployments.apps prod-web -n prod -o yaml > prod-web.yaml
 
-cat prod-web.yaml | grep -A6 "env:"
+cat prod-web.yaml | grep env -A6
 
 kubectl create secret generic prod-db --from-literal DB_Host=prod-db --from-literal DB_User=root --from-literal DB_Password=paswrd -n prod
 
 k describe secrets prod-db 
+```
 
-k edit deployments.apps prod-web -n prod
-
+Redeploy the deployment [prod-web](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge2/prod-web.yaml)
+```
+k replace --force -f prod-web.yaml
 k get pod -n prod
 
 ```
