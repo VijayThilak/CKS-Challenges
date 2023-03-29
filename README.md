@@ -458,7 +458,7 @@ echo "agent-smith,important_role_do_not_delete,important_binding_do_not_delete" 
 
 Check the 'falco' logs to find the pod that has events generated because of packages being updated on it
 ```
-cat falco.log 
+Journalctl -f falco.log 
 
 Mar 15 13:40:26 controlplane falco[23510]: 13:40:26.974065686 Error Package management process launched in container (user=root user_loginuid=-1 command=apt install nginx container_id=c3c7bfd6dd6e  container_name=k8s_eden-software2_eden-software2_eden-prime_ 94744b4a-a073-490b-8bef-f54c0313e873_0  image=ubuntu:latest)
 ```
