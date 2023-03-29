@@ -173,7 +173,7 @@ image: kodekloud/webapp-color:stable
 
 ## Task 3 - Remove shell access by using  startupProbe
 
-Ensure the pod `dev-webapp` and `staging-webapp` is immutable. Redeploy the pod as per the given recommendations and make sure that the application is up
+Ensure the pod [dev-webapp](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge2/dev-webapp.yaml)  and [staging-webapp](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge2/staging-webapp.yaml) is immutable. Redeploy the pod as per the given recommendations and make sure that the application is up
 
 ## Task 4 - Create and access the Secret using environment variables within deployment
 
@@ -247,7 +247,7 @@ ps -ef |grep kubelet |grep config
 
 cat /var/lib/kubelet/config.yaml
 
-$$$ staticPodPath: /etc/kubernetes/manifests
+staticPodPath: /etc/kubernetes/manifests
 
 ````
 
