@@ -364,9 +364,6 @@ k get rolebinding -n citadel
 
 Then Create a single rule in the [audit Policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge4/audit-policy.yaml) at `/etc/kubernetes/audit-policy.yaml` as per requirements
 
-[audit Policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge4/audit-policy.yaml)
-
-
 
 
 ## Tasks 2 - Enable auditing in kube-apiserver
@@ -430,12 +427,14 @@ systemctl restart falco
 systemctl status falco
 ```
 
+
+
+## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods 
+
 Check the API server audit logs and find  the user responsible for the abnormal behaviour in the 'citadel' namespace
 ```
 cat /var/log/kubernetes/audit/audit.log |grep citadel |grep -v "get\|watch\|list" |jq
 ```
-
-## Tasks 4 - Delete the role and rolebinding causing the constant deletion and creation of the configmaps and pods 
 
 Find the name of the 'user', 'role' and 'rolebinding' responsible for the issue
 ```
