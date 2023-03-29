@@ -379,6 +379,7 @@ Modify the [kube-apiserver](https://github.com/VijayThilak/CKS-Challenges/blob/m
     - mountPath: /etc/kubernetes/audit-policy.yaml
       name: audit
       readOnly: true
+      
     - mountPath: /var/log/kubernetes/audit/
       name: audit-log
       readOnly: false
