@@ -362,7 +362,7 @@ k get cm -n citadel
 k get rolebinding -n citadel
 ```
 
-Then Create a single rule in the [audit Policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge4/audit-policy.yaml) at `/etc/kubernetes/audit-policy.yaml` as per requirements
+Then create a rule in the [audit Policy](https://github.com/VijayThilak/CKS-Challenges/blob/main/Challenge4/audit-policy.yaml) at `/etc/kubernetes/audit-policy.yaml` as per requirements
 
 
 
