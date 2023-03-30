@@ -2,7 +2,7 @@
 
 # Challenge 1
 
-# Scenario
+# Architecture Diagram
 
 <img width="964" alt="Screenshot 2023-03-16 at 1 12 57 PM" src="https://user-images.githubusercontent.com/8725714/225551840-4e1a80b0-ecf6-47ff-bb16-3a263efa5285.png">
 
@@ -132,7 +132,7 @@ https://user-images.githubusercontent.com/8725714/224311613-89be16a0-457e-42d3-a
 
 
 # Challenge 2
-# Scenario
+# Architecture Diagram
 
 <img width="1331" alt="Screenshot 2023-03-16 at 3 37 37 PM" src="https://user-images.githubusercontent.com/8725714/225595963-106b53c5-6582-4b8f-b2ab-e3e927c7fd0e.png">
 
@@ -211,7 +211,7 @@ https://user-images.githubusercontent.com/8725714/227878140-89c56152-4c7b-4fa1-8
 
 # Challenge 3
 
-# Scenario
+# Architecture Diagram
 <img width="1266" alt="Screenshot 2023-03-16 at 12 00 55 PM" src="https://user-images.githubusercontent.com/8725714/225533923-6c9f44b2-ca68-4b94-9036-d35babf52581.png">
 
 # Tasks
@@ -348,7 +348,7 @@ https://user-images.githubusercontent.com/8725714/228216702-97c98fef-2bd9-4148-9
 
 
 # Challenge 4
-# Scenario
+# Architecture Diagram
 <img width="930" alt="Screenshot 2023-03-16 at 5 48 15 PM" src="https://user-images.githubusercontent.com/8725714/225626184-7686ee57-e2bb-4e43-9a16-4db2154023a3.png">
 
 # Tasks
