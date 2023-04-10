@@ -507,4 +507,4 @@ k delete rolebinding important_binding_do_not_delete -n citadel
 https://user-images.githubusercontent.com/8725714/228230587-f7ed415d-ac7b-4965-a2b6-b62f73451efb.mp4
 
 
-                                                                THANK YOU
+                                                     THANK YOU
